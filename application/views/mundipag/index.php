@@ -1,4 +1,4 @@
-<?php $this->load->view('layout/navbar'); ?>
+<?php $this->load->view('layout/navbar'); ?>>
 
 <div class="page-wrap">
 
@@ -7,7 +7,7 @@
   <div class="main-content">
     <div class="container-fluid">
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-12">
 
           <h4 class="p-3 mb-2 bg-light text-center text-info font-weight-bold shadow-lg p-3 mb-5 bg-white rounded">Enviando Planilha ChargeBack para Banco de Dados Bit Hive!</h4>
@@ -22,7 +22,7 @@
 
           <form method="post" action="<?php echo base_url('chargeback/spreadsheet_import'); ?>" enctype="multipart/form-data">
             <div class="form-group input-group-lg ">
-              <input type="file" name="upload_file" class="form-control " placeholder="Enter Name" id="upload_file" required>              
+              <input type="file" name="upload_file" class="form-control " placeholder="Enter Name" id="upload_file" required>
             </div>
             <div class="form-group">
               <input type="submit" name="submit" class="btn btn-info float-right font-weight-bold" value="Enviar Excel para Banco de Dados">
@@ -32,7 +32,7 @@
           <hr>
 
         </div>
-      </div> <!-- FIM DA ROW -->
+      </div> FIM DA ROW -->
 
       <div class="row ">
         <div class="col-md-12 ">

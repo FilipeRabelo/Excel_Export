@@ -90,7 +90,7 @@ class Chargeback extends CI_Controller {
     $inserdata = $this->home_model->inserir_lote($data_salva); //ESTA RECEBENDO o array E INSERINDO LOTES NO DB / insert_batch  -> INSERINDO LOTES
 
     if ($inserdata > 0) {
-      $this->session->set_flashdata('message', '<div class="alert alert-success">Adicionado com sucesso.</div>');
+      $this->session->set_flashdata('message', '<div class="alert alert-success">Adicionado com sucesso . <?= $qntRegistros => </div>', );
       redirect('chargeback/index');
     } else {
       $this->session->set_flashdata('message', '<div class="alert alert-danger">Dados Não carregados. Por favor, tente novamente.</div>');

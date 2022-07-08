@@ -24,14 +24,14 @@ class Home_model extends CI_Model{
         if($i == $quantidade){
           $comparacomArray = $quantidadeInicial + $quantidade;
           $quantidade = $comparacomArray;
-          //echo"Salva ".$i." registros";
+          echo $i." registros";
         }
        
         $this->db->insert('chargeback_excel', $data_salva[$i]);       
 
         // Para registrar o insertDate no flash_data na view de importação
          if ($this->db->affected_rows() > 0) {
-           $this->qntRegistros = $this->qntRegistros + 1;
+           $this->qntRegistros = $this->qntRegistros + 1;          
          } 
 
         if ($i == $tamanhoArray) {
@@ -41,6 +41,7 @@ class Home_model extends CI_Model{
       };
 
        return $this->qntRegistros;
+       
 
       // $i recebe o primeiro numero valido do array como tem que pular a primeira linha ele recebe 1 ja que a primeira linha e zero.
 

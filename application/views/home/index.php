@@ -90,9 +90,9 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row ">
 
-            <div class="col-md-6">
+            <div class="col-md-6 ">
               <div class="card">
                 <div class="card-body">
 
@@ -113,16 +113,14 @@
               </div>
             </div>
 
-            <div class="col-md-6">
-              <div class="card" style="min-height: 422px;">
-                <div class="card-header">
-                  <h3>Donut chart</h3>
-                </div>
-                <div class="card-body">
-                  <div id="c3-donut-chart"></div>
+            <!-- <div class="col-md-6">
+              <div class="card" style="min-height: 200px">
+               
+                <div class="card-body" >
+                  <div id="c3-donut-chart" ></div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
         </div>
