@@ -48,7 +48,7 @@
                         <div class="day-number"><?= date('d') ?></div>
                         <div class="date-right ">
                           <div class="day-name"><?= date('l') ?></div>
-                          <div class="month"><?= date('M-Y') ?></div>
+                          <div class="month"><?= date('M-Y H:i') ?></div>
                         </div>
                       </div>
                     </div>
