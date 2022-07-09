@@ -8,7 +8,7 @@ class Chargeback extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('home_model');
+    $this->load->model('chargeback_model');
   }
 
   public function index()
@@ -93,7 +93,7 @@ class Chargeback extends CI_Controller {
     // var_dump($dados_planilha);
     // exit();    
 
-    $inserdata = $this->home_model->inserir_lote($data_salva); //ESTA RECEBENDO o array E INSERINDO LOTES NO DB / insert_batch  -> INSERINDO LOTES
+    $inserdata = $this->chargeback_model->inserir_lote($data_salva); //ESTA RECEBENDO o array E INSERINDO LOTES NO DB / insert_batch  -> INSERINDO LOTES
 
     if ($inserdata > 0) {
       $this->session->set_flashdata('message', '<div class="alert alert-success">Adicionado com sucesso . <?= $qntRegistros => </div>', );

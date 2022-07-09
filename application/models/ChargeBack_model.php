@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home_model extends CI_Model{
+class ChargeBack_model extends CI_Model{
 
-   public $qntRegistros = 0; // Para registrar o insertDate no flash_data na view de importação
+  public $qntRegistros = 0; // Para registrar o insertDate no flash_data na view de importação
 
   public function __construct() {
     parent::__construct();
