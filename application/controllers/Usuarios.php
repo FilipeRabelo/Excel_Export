@@ -25,19 +25,20 @@ defined('BASEPATH') or exit('Ação não permitida');
         ),
 
         'users' => $this->ion_auth->users()->result(), // BUSCAR USUARIOS E ENVIAR PARA A VIEW //
-
       );
 
       // echo "<pre>";
       // print_r($data['user']);
-      // exit();
-     
+      // exit();     
 
       $this->load->view('layout/header', $data);
       $this->load->view('usuarios/index');
       $this->load->view('layout/footer');
 
     }
+
+
+
        //CADASTRAR E EDITAR USUARIOS/USUARIO
 
     public function core($usuario_id = NULL) {  //chama o modolo usuario
@@ -54,25 +55,50 @@ defined('BASEPATH') or exit('Ação não permitida');
 
           exit('Usuario nao existe');
 
-        }else{   // PRONTO PARA EDITAR
+        }else{   
+        
+        // EDITAR USUARIO
 
-        $data = array(
+          //validação
 
-          'titulo'         => 'Editar Usuários',
-          'sub_titulo'     => 'Chegou a hora de editar o Usuário!',          
+          $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|mim_length[6]|max_length[50]');
+          $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|mim_length[6]|max_length[50]');
+          $this->form_validation->set_rules('username',    'Usuario',    'trim|required|mim_length[6]|max_length[50]');
+          $this->form_validation->set_rules('email',       'E-Mail',     'trim|valid_email|required|mim_length[6]|max_length[50]');
+          $this->form_validation->set_rules('password',    'Password',   'trim|mim_length[8]|max_length[50]');
+          $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|mim_length[8]|max_length[50]|matches[password]');
 
-          'user'           => $this->ion_auth->user($usuario_id)->row(), //BUSCAR USUARIO E ARMAZANAR DENTRO DA VARIAVEL
-          'perfil_usuario' => $this->ion_auth->get_users_groups($usuario_id)->row() ,
-          //PERFIL_USUARIO RECEBE O description COLUNA DA TABELA
-        );
+          if($this->form_validation->run()){
 
-        // echo "<pre>";
-        // print_r($data['perfil_usuario']);
-        // exit();
+            echo "<pre>";
+            print_r($this->input->post());
+            exit();
 
-        $this->load->view('layout/header', $data);
-        $this->load->view('usuarios/core');
-        $this->load->view('layout/footer');
+          }else{
+          // ERRO DE VALIDAÇÂO
+
+          $data = array(
+
+            'titulo'         => 'Editar Usuários',
+            'sub_titulo'     => 'Chegou a hora de editar o Usuário!',
+
+            //BUSCAR USUARIO E ARMAZANAR DENTRO DA VARIAVEL
+            'user'           => $this->ion_auth->user($usuario_id)->row(), 
+
+            //PERFIL_USUARIO RECEBE O description COLUNA DA TABELA
+            'perfil_usuario' => $this->ion_auth->get_users_groups($usuario_id)->row(),
+          
+          );
+
+            // echo "<pre>";
+            // print_r($data['perfil_usuario']);
+            // exit();
+
+            $this->load->view('layout/header', $data);
+            $this->load->view('usuarios/core');
+            $this->load->view('layout/footer');
+
+          }       
 
         }
 
