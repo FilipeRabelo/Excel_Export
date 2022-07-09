@@ -34,7 +34,7 @@
         <div class="nav-item has-sub">
           <a href="<?= base_url('/usuarios'); ?>"><i class="ik ik-users"></i><span>Usuarios</span></a>
           <div class="submenu-content">
-            <a href="<?= base_url('/usuarios'); ?>" class="menu-item"><i class="ik ik-user"></i>Editar</a>
+            <a href="<?= base_url('usuarios/core/'); ?>" class="menu-item"><i class="ik ik-user"></i>Editar</a>
           </div>
         </div>
 

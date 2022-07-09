@@ -35,9 +35,7 @@ defined('BASEPATH') or exit('Ação não permitida');
       $this->load->view('usuarios/index');
       $this->load->view('layout/footer');
 
-    }
-
-
+    }    
 
        //CADASTRAR E EDITAR USUARIOS/USUARIO
 
