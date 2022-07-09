@@ -1,15 +1,19 @@
+</html>
+
 <!doctype html>
 <html class="no-js" lang="pt-br">
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Export Excel para SQL</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon2.ico"/>
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon" /> -->
 
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
 
@@ -30,6 +34,15 @@
   <link rel="stylesheet" href="<?= base_url('public/dist/css/theme.min.css'); ?>">
 
   <script src="<?= base_url('src/js/vendor/modernizr-2.8.3.min.js'); ?>"></script>
+
+  <?php if (isset($styles)) : ?>
+    <!-- SE VARIAVEL $STYLES TIVER SETADA FACA UM FOREACH NELA -->
+    <?php foreach ($styles as $style) : ?>
+      <link rel="stylesheet" href="<?= base_url('public/' . $style) ?>">
+    <?php endforeach; ?>
+
+  <?php endif; ?>
+
 </head>
 
 <body>

@@ -13,8 +13,14 @@ class Chargeback extends CI_Controller {
 
   public function index()
   {
+
+    $data = array(
+      'titulo'     => 'ChargeBack',
+      'sub_titulo' => 'Importe seu Arquivo Excel para o Banco de Dados Bit Hive!',
+    );
+
     $this->load->view('layout/header');
-    $this->load->view('chargeback/index');
+    $this->load->view('chargeback/index', $data);
     $this->load->view('layout/footer');
   }
 

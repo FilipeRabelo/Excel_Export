@@ -7,8 +7,13 @@
 
     public function index(){
 
+      $data = array(
+        'titulo'     => 'MundiPag',
+        'sub_titulo' => 'Importe seu Arquivo Excel para o Banco de Dados Bit Hive!',
+      );
+
       $this->load->view('layout/header');
-      $this->load->view('mundipag/index');
+      $this->load->view('mundipag/index', $data);
       $this->load->view('layout/footer');
 
     }

@@ -15,6 +15,22 @@ defined('BASEPATH') or exit('Ação não permitida');
 
     }
 
+    // public function auth(){
+
+    //   $identity = html_escape($this->input->post('email'));
+    //   $password = html_escape($this->input->post('password'));
+    //   $remember = FALSE; // remember the user
+      
+    //   if($this->ion_auth->login($identity, $password, $remember)){
+    //     $this->session->set_flashdata('sucesso', 'Seja bem-vindo(a)!!');
+    //     redirect('/');
+    //   }else{
+    //     $this->session->set_flashdata('error', 'Verifique seus dados!!!');
+    //     redirect($this->router->fetch_class());
+    //   }
+
+    // }
+
   }
 
 ?>

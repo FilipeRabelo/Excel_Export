@@ -1,6 +1,6 @@
 </div> <!-- fim div wrapper -->
 
-<div class="modal fade apps-modal" id="appsModal" tabindex="-1" role="dialog" aria-labelledby="appsModalLabel" aria-hidden="true" data-backdrop="false">
+<!-- <div class="modal fade apps-modal" id="appsModal" tabindex="-1" role="dialog" aria-labelledby="appsModalLabel" aria-hidden="true" data-backdrop="false">
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ik ik-x-circle"></i></button>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -116,6 +116,14 @@
 
 <script src="<?= base_url('public/dist/js/theme.min.js'); ?>"></script>
 
+<?php if (isset($scripts)) : ?>
+  <!-- SE VARIAVEL $STYLES TIVER SETADA FACA UM FOREACH NELA -->
+  <?php foreach ($scripts as $script) : ?>
+    <script src="<?= base_url('public/' . $script); ?>"></script>
+  <?php endforeach; ?>
+
+<?php endif; ?>
+
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
 <script>
@@ -134,6 +142,9 @@
   ga('create', 'UA-XXXXX-X', 'auto');
   ga('send', 'pageview');
 </script>
+
+
+
 </body>
 
 </html>

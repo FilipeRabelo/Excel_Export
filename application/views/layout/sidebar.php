@@ -1,9 +1,10 @@
 <div class="app-sidebar colored">
 
   <div class="sidebar-header">
-    <a class="header-brand" href="index.html">
+    <a class="header-brand" href="<?= base_url('/'); ?>">
       <div class="logo-img">
-        <!-- <img src="src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> -->
+        <i class="ik ik-folder"></i>
+        <!-- <img src=" src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> -->
       </div>
       <span class="text">Export Excel</span>
     </a>
@@ -19,15 +20,22 @@
         <div class="nav-lavel">Menu Export Excel</div>
 
         <div class="nav-item active">
-          <a href="http://localhost/novo_mundiPag/"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+          <a href="<?= base_url('/'); ?>"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
         </div>
 
         <div class="nav-item">
-          <a href="http://localhost/novo_mundiPag/mundipag"><i class="ik ik-menu"></i><span>MundiPag </span></a>
+          <a href="<?= base_url('/mundipag'); ?>"><i class="ik ik-menu"></i><span>MundiPag </span></a>
         </div>
 
         <div class="nav-item">
-          <a href="http://localhost/novo_mundiPag/chargeback"><i class="ik ik-layers"></i><span>Chargeback</span></a>
+          <a href="<?= base_url('/chargeback'); ?>"><i class="ik ik-layers"></i><span>Chargeback</span></a>
+        </div>
+
+        <div class="nav-item has-sub">
+          <a href="<?= base_url('/usuarios'); ?>"><i class="ik ik-users"></i><span>Usuarios</span></a>
+          <div class="submenu-content">
+            <a href="<?= base_url('/usuarios'); ?>" class="menu-item"><i class="ik ik-user"></i>Editar</a>
+          </div>
         </div>
 
       </nav>

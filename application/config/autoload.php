@@ -30,6 +30,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
+$autoload['time_zone'] = date_default_timezone_set('America/Sao_Paulo');
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Packages
@@ -58,7 +60,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session'); // precisei alterar para carregar as livrarias
+$autoload['libraries'] = array('database', 'session', 'ion_auth'); // precisei alterar para carregar as livrarias
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +91,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url');
+$autoload['helper'] = array('url', 'funcao', 'form');
 
 /*
 | -------------------------------------------------------------------

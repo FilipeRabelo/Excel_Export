@@ -7,6 +7,31 @@
   <div class="main-content">
     <div class="container-fluid">
 
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-lg-8">
+            <div class="page-header-title">
+              <i class="ik ik-bar-chart-2 bg-blue"></i>
+              <div class="d-inline">
+                <h5><?= $titulo; ?></h5>
+                <span><?= $sub_titulo ?></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a data-toggle="tooltip" data-placement="bottom" data-toggle="tooltip" data-placement="bottom" title="Home" href="<?= base_url('/'); ?>"><i class=" ik ik-home"></i></a>
+                </li>
+
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12">
 
@@ -99,6 +124,7 @@
                   <div class="card-body timeline">
                     <div class="header bg-theme" style="background-image: url('img/placeholder/placeimg_400_200_nature.jpg')">
                       <div class="color-overlay d-flex align-items-center">
+                        
                         <div class="day-number"><?= date('d') ?></div>
                         <div class="date-right">
                           <div class="day-name"><?= date('l') ?></div>
@@ -162,19 +188,25 @@
                 </div>
               </div>
             </div>
-
-            <!-- <div class="col-md-6">
-              <div class="card" style="min-height: 200px">
-               
-                <div class="card-body" >
-                  <div id="c3-donut-chart" ></div>
-                </div>
-              </div>
-            </div> -->
           </div>
 
         </div>
       </div> <!-- FIM DA ROW -->
+
+      <!-- <?php if ($message = $this->session->flashdata('error')) : ?>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert bg-success alert-success text-white alert-dismissible">
+              <strong><?= $message ?></strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                <i class="ik ik-x"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      <?php endif; ?> -->
 
     </div>
   </div>

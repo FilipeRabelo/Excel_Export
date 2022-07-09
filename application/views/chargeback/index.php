@@ -7,22 +7,42 @@
   <div class="main-content">
     <div class="container-fluid">
 
+      <div class="page-header">
+        <div class="row align-items-end">
+          <div class="col-lg-8">
+            <div class="page-header-title">
+              <i class="ik ik-layers bg-blue"></i>
+              <div class="d-inline">
+                <h5><?= $titulo; ?></h5>
+                <span><?= $sub_titulo ?></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a data-toggle="tooltip" data-placement="bottom" title="Home" href="<?= base_url('/'); ?>"><i class=" ik ik-home"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">ChargeBack</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12">
-
           <h4 class="p-3 mb-2 bg-light text-center text-info font-weight-bold shadow-lg p-3 mb-5 bg-white rounded">Enviando Planilha ChargeBack para Banco de Dados Bit Hive!</h4>
-
           <hr>
-
           <?php
           if ($this->session->flashdata('message')) {
             echo $this->session->flashdata('message');
           }
           ?>
-
           <form method="post" action="<?php echo base_url('chargeback/spreadsheet_import'); ?>" enctype="multipart/form-data">
             <div class="form-group input-group-lg ">
-              <input type="file" name="upload_file" class="form-control " placeholder="Enter Name" id="upload_file" required>              
+              <input type="file" name="upload_file" class="form-control " placeholder="Enter Name" id="upload_file" required>
             </div>
             <div class="form-group">
               <input type="submit" name="submit" class="btn btn-info float-right font-weight-bold" value="Enviar Excel para Banco de Dados">
@@ -30,13 +50,11 @@
           </form>
           <br>
           <hr>
-
         </div>
       </div> <!-- FIM DA ROW -->
 
       <div class="row ">
         <div class="col-md-12 ">
-
           <div class="row ">
             <div class="col-md-6 ">
               <div class="card  ">
@@ -58,11 +76,8 @@
               </div>
             </div>
           </div>
-
         </div>
       </div> <!-- FIM DA ROW -->
-
-
 
     </div>
   </div>
