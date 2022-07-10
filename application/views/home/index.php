@@ -1,10 +1,10 @@
 <?php $this->load->view('layout/navbar'); ?>
 
-<div class="page-wrap">
+<div class="page-wrap bg-dark">
 
   <?php $this->load->view('layout/sidebar'); ?>
 
-  <div class="main-content">
+  <div class="main-content bg-dark">
     <div class="container-fluid">
 
       <div class="page-header">
@@ -13,8 +13,8 @@
             <div class="page-header-title">
               <i class="ik ik-bar-chart-2 bg-blue"></i>
               <div class="d-inline">
-                <h5><?= $titulo; ?></h5>
-                <span><?= $sub_titulo ?></span>
+                <h5 style="color: white;"><?= $titulo; ?></h5>
+                <span style="color: white;"><?= $sub_titulo ?></span>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
                   <div class="card-body timeline">
                     <div class="header bg-theme" style="background-image: url('img/placeholder/placeimg_400_200_nature.jpg')">
                       <div class="color-overlay d-flex align-items-center">
-                        
+
                         <div class="day-number"><?= date('d') ?></div>
                         <div class="date-right">
                           <div class="day-name"><?= date('l') ?></div>

@@ -4,7 +4,7 @@
 
   <?php $this->load->view('layout/sidebar'); ?>
 
-  <div class="main-content">
+  <div class="main-content bg-dark">
     <div class="container-fluid">
 
       <div class="page-header">
@@ -13,18 +13,18 @@
             <div class="page-header-title">
               <i class="ik ik-users bg-blue"></i>
               <div class="d-inline">
-                <h5><?= $titulo; ?></h5>
-                <span><?= $sub_titulo ?></span>
+                <h5 style="color: white;"><?= $titulo; ?></h5>
+                <span style="color: white;"><?= $sub_titulo ?></span>
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <nav class="breadcrumb-container" aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item">
+                <li class="breadcrumb-item ">
                   <a data-toggle="tooltip" data-placement="bottom" title="Home" href="<?= base_url('/'); ?>"><i class=" ik ik-home"></i></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?= $titulo; ?></li>
+                <li class="breadcrumb-item active " aria-current="page"><?= $titulo; ?></li>
               </ol>
             </nav>
           </div>
