@@ -15,21 +15,20 @@
 
                     <!-- VALIDAÇÃO -->
 
-                    <!-- <?php if ($message = $this->session->flashdata('error')) : ?>
+                    <?php if ($message = $this->session->flashdata('error')) : ?>
 
-            <div class="row">
-              <div class="col-md-12">
-                <div class="alert bg-success alert-success text-white alert-dismissible">
-                  <strong><?= $message ?></strong>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                    <i class="ik ik-x"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert bg-danger alert-success text-white alert-dismissible">
+                        <strong><?= $message ?></strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                            <i class="ik ik-x"></i>
+                        </button>
+                        </div>
+                    </div>
+                    </div>
 
-          <?php endif; ?> -->
-
+          <?php endif; ?> 
                     <p class="text-center text-primary font-weight-bold">Feliz em vê-lo novamente!!</p>
 
                     <form name="form_auth" method="POST" action="<?= base_url('login/auth') ?>">

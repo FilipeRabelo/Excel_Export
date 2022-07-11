@@ -42,20 +42,20 @@
                         </div>
                     </div>
                 </div>
-                echo"$message";
-                exit();
+                <!-- echo"$message";
+                exit(); -->
             <?php endif; ?>
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header font-weight-bold"><a class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core') ?>">+ Novo</a></div> <!-- href esta apontando o controlador e o metado! -->
+                        <div class="card-header font-weight-bold"><a class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core/'); ?>">+ Novo</a></div> <!-- href esta apontando o controlador e o metado! -->
                         <!-- <div class="card-header ">
                              <a href="<?= base_url('usuarios/core/'); ?>" title="Novo cadastro <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-success ">+ &nbsp; Novo</a>
                         </div> -->
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
 
-                            <table class="data-table table font-weight-bold table-primary">
+                            <table class="data-table table-responsive table font-weight-bold table-primary">
 
 
                                 <thead class="table table-primary table-hover ">

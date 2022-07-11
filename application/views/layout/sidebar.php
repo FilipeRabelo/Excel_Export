@@ -20,7 +20,7 @@
         <div class="nav-lavel">Menu Export Excel</div>
 
         <div class="nav-item active">
-          <a href="<?= base_url('/'); ?>"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+          <a href="<?= base_url('/home'); ?>"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
         </div>
 
         <div class="nav-item">

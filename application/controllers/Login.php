@@ -21,9 +21,13 @@ defined('BASEPATH') or exit('Ação não permitida');
       $password = html_escape($this->input->post('password'));
       $remember = FALSE; // remember the user
       
-      if($this->ion_auth->login($identity, $password, $remember)){
+      $retornoLogin = $this->ion_auth->login($identity, $password, $remember);
+    //   echo"<pre>";
+    //   print_r($retornoLogin);
+    //   exit();
+      if(!empty($retornoLogin)){
         $this->session->set_flashdata('sucesso', 'Seja bem-vindo(a)!!');
-        redirect('/');
+        redirect('/home/');
       }else{
         $this->session->set_flashdata('error', 'Verifique seus dados!!!');
         redirect($this->router->fetch_class());

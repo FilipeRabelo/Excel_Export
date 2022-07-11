@@ -53,12 +53,12 @@ class Usuarios extends CI_Controller
             //pode cadastrar novo usuario
 
                                                                                     //valida cada campo...
-            $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|min_length[6]|max_length[50]');
-            $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|min_length[6]|max_length[50]');
-            $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[6]|max_length[50]|is_unique[users.username]');  //verifica cada campo no banco para ver se ja existe
+            $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|min_length[4]|max_length[50]');
+            $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|min_length[4]|max_length[50]');
+            $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[]|max_length[50]|is_unique[users.username]');  //verifica cada campo no banco para ver se ja existe
             $this->form_validation->set_rules('email',       'E-Mail',     'trim|valid_email|required|min_length[6]|max_length[50]|is_unique[users.email]');
-            $this->form_validation->set_rules('password',    'Password',   'trim|required|mim_length[8]|max_length[50]');
-            $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|required|mim_length[8]|max_length[50]|matches[password]');
+            $this->form_validation->set_rules('password',    'Password',   'trim|required|min_length[6]|max_length[50]');
+            $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|required|min_length[6]|max_length[50]|matches[password]');
 
             //SE VALIDOU COMECA A TRABALHAR COM A MONTAGEM DO ARRAY DE DADOS E INSERÇÃO NO BANCO DE DADOS
 
@@ -105,12 +105,12 @@ class Usuarios extends CI_Controller
 
                 //validação
 
-                $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|min_length[6]|max_length[50]');
-                $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|min_length[6]|max_length[50]');
-                $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[6]|max_length[50]|callback_username_check');
+                $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|min_length[4]|max_length[50]');
+                $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|min_length[4]|max_length[50]');
+                $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[4]|max_length[50]|callback_username_check');
                 $this->form_validation->set_rules('email',       'E-Mail',     'trim|valid_email|required|min_length[6]|max_length[50]|callback_email_check');
-                $this->form_validation->set_rules('password',    'Password',   'trim|mim_length[8]|max_length[50]');
-                $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|mim_length[8]|max_length[50]|matches[password]');
+                $this->form_validation->set_rules('password',    'Password',   'trim|min_length[6]|max_length[50]');
+                $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|min_length[6]|max_length[50]|matches[password]');
 
                 if ($this->form_validation->run()) {
 

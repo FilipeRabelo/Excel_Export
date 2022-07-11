@@ -56,6 +56,7 @@ class MundiPag extends CI_Controller{
 
       $data_salva[$incrementar_array] = array(
 
+        // id = 0
         'order_id'                      => $value[0],   //1
         'code'                          => $value[1],   //2          
         'status'                        => $value[2],   //3
@@ -78,23 +79,22 @@ class MundiPag extends CI_Controller{
         'customer_zipe_code'            => $value[19],  //20
         'customer_address_id'           => $value[20],  //21
         'customer_home_phone'           => $value[21],  //22
-        'customer_cell_phone'           => $value[22],  //37
-        'shipping_amount'               => $value[23],  //23
-        'shipping_description'          => $value[24],  //24
-        'shipping_recipient_name'       => $value[25],  //25 
-        'shipping_recipient_phone'      => $value[26],  //26
-        'shipping_address_street'       => $value[27],  //27
-        'shipping_address_neighborhood' => $value[28],  //28
-        'shipping_address_number'       => $value[29],  //29
-        'shipping_address_city'         => $value[30],  //30
-        'shipping_address_state'        => $value[31],  //31
-        'shipping_address_country'      => $value[32],  //32
-        'shipping_address_zip_code'     => $value[33],  //36
-        'plataform_name'                => $value[34],  //33
-        'metadata'                      => $value[35],  //34
-        'isChecKout'                    => $value[36],  //35
-        'charge_id'                     => isset($value[37]) ? $value[37] : '' //38   
-
+        'customer_cell_phone'           => $value[22],  //23
+        'shipping_amount'               => $value[23],  //24
+        'shipping_description'          => $value[24],  //25
+        'shipping_recipient_name'       => $value[25],  //26 
+        'shipping_recipient_phone'      => $value[26],  //27
+        'shipping_address_street'       => $value[27],  //28
+        'shipping_address_neighborhood' => $value[28],  //29
+        'shipping_address_number'       => $value[29],  //30
+        'shipping_address_city'         => $value[30],  //31
+        'shipping_address_state'        => $value[31],  //32
+        'shipping_address_country'      => $value[32],  //33
+        'shipping_address_zip_code'     => $value[33],  //34
+        'plataform_name'                => $value[34],  //35
+        'metadata'                      => $value[35],  //36
+        'isChecKout'                    => $value[36],  //37
+        'charge_id'                     => isset($value[37]) ? $value[37] : '' // 38   // 39 como id
       );
 
       $incrementar_array++;
@@ -107,7 +107,7 @@ class MundiPag extends CI_Controller{
     $inserdata = $this->mundipag_model->inserir_lote($data_salva); //ESTA RECEBENDO o array E INSERINDO LOTES NO DB / insert_batch  -> INSERINDO LOTES
 
     if ($inserdata > 0) {
-      $this->session->set_flashdata('message', '<div class="alert alert-success">Adicionado com sucesso . <?= $qntRegistros => </div>',);
+      $this->session->set_flashdata('message', '<div class="alert alert-success">Adicionado' . '<?= $inserdata ?>' . ' Registros com sucesso </div>',);
       redirect('mundipag/index');
     } else {
       $this->session->set_flashdata('message', '<div class="alert alert-danger">Dados Não carregados. Por favor, tente novamente.</div>');
