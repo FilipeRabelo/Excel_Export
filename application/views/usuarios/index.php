@@ -49,10 +49,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header font-weight-bold"><a class="btn btn-success" href="#">+ Novo</a></div>
+                        <div class="card-header font-weight-bold"><a class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core') ?>">+ Novo</a></div> <!-- href esta apontando o controlador e o metado! -->
                         <!-- <div class="card-header ">
-                <a href="<?= base_url('usuarios/core/'); ?>" title="Novo cadastro <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-success ">+ &nbsp; Novo</a>
-              </div> -->
+                             <a href="<?= base_url('usuarios/core/'); ?>" title="Novo cadastro <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-success ">+ &nbsp; Novo</a>
+                        </div> -->
                         <div class="card-body">
 
                             <table class="data-table table font-weight-bold table-primary">
@@ -76,27 +76,17 @@
                                             <td><?= $user->id          ?></td>
                                             <td><?= $user->username    ?></td>
                                             <td><?= $user->email       ?></td>
-
                                             <td><?= ($this->ion_auth->is_admin($user->id) ? 'Administrador' : 'Atendente'); ?></td>
-
                                             <td><?= $user->first_name  ?></td>
-
                                             <td class="text-center">
                                                 <a href="<?= base_url('usuarios/core/' . $user->id); ?>" title="Editar <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-primary"><i class="ik ik-edit-2"></i>Editar </a>
                                                 <a href="#" title="Excluir <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-danger"><i class="ik ik-info"></i> Excluir</a>
                                             </td>
-
                                             <td><?= ($user->active == 1 ? '<span class="badge badge-pill badge-success mb-1">Sim</span>' : '<span class="badge badge-pill badge-warning mb-1">Não</span>'); ?></td>
-
-
-
-
-
                                         </tr>
 
                                     <?php endforeach; ?>
                                 </tbody>
-
 
                             </table>
 

@@ -10,8 +10,7 @@ class Usuarios extends CI_Controller
     // }
 
 
-    public function index()
-    {  //chama o modulo usuario
+    public function index() {  //chama o modulo usuario
 
         //ARQUIVOS SENDO ENVIADOS PARA A VIEW 
 
@@ -41,17 +40,59 @@ class Usuarios extends CI_Controller
         $this->load->view('layout/footer');
     }
 
+
+
+
     //CADASTRAR E EDITAR USUARIOS/USUARIO
 
-    public function core($usuario_id = NULL)
+    public function core($usuario_id = NULL) // esta sendo chamado no href no index/usuarios
     {  //chama o modolo usuario
 
         if (!$usuario_id) {   // cadastro de novo usuario        
 
-            exit('Pode cadastrar novo usuario');
+            //pode cadastrar novo usuario
+
+                                                                                    //valida cada campo...
+            $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|min_length[6]|max_length[50]');
+            $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|min_length[6]|max_length[50]');
+            $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[6]|max_length[50]|is_unique[users.username]');  //verifica cada campo no banco para ver se ja existe
+            $this->form_validation->set_rules('email',       'E-Mail',     'trim|valid_email|required|min_length[6]|max_length[50]|is_unique[users.email]');
+            $this->form_validation->set_rules('password',    'Password',   'trim|required|mim_length[8]|max_length[50]');
+            $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|required|mim_length[8]|max_length[50]|matches[password]');
+
+            //SE VALIDOU COMECA A TRABALHAR COM A MONTAGEM DO ARRAY DE DADOS E INSERÇÃO NO BANCO DE DADOS
+
+            if($this->form_validation->run) {// se o form_validation rodou...1
+                
+                exit('Validado');
+            }else{               
+
+                // ERRO DE VALIDAÇÂO
+
+                $data = array(
+
+                    'titulo'         => 'Cadastrar Usuário',
+                    'sub_titulo'     => 'Chegou a hora de Cadastrar um novo Usuário!',                    
+                );
+
+                // echo "<pre>";
+                // print_r($data["perfil_usuario"]);
+                // exit();
+
+                $this->load->view('layout/header', $data);
+                $this->load->view('usuarios/core');
+                $this->load->view('layout/footer');
+
+            }
+
         } else {
 
-            if (!$this->ion_auth->user($usuario_id)->row()) {   // EDITAR O USUARIO // 
+
+
+            // EDITAR O USUARIO // 
+
+
+            if (!$this->ion_auth->user($usuario_id)->row()) {   
 
                 exit('Usuario nao existe');
             } else {
@@ -59,6 +100,8 @@ class Usuarios extends CI_Controller
                 //EDITAR USUARIO
 
                 $perfil_atual = $this->ion_auth->get_users_groups($usuario_id)->row();
+
+
 
                 //validação
 
@@ -99,7 +142,13 @@ class Usuarios extends CI_Controller
                     // print_r($perfil_atual);
                     // exit();
 
-                    //update 
+
+
+
+
+                    //UPDATE   (ATUALIZAR USUAIRO)
+
+                 
                     if ($this->ion_auth->update($usuario_id, $data)) {   //Atualizar os dados
                         
                         $perfil_post = $this->input->post('perfil'); //recuperando o name
@@ -119,10 +168,14 @@ class Usuarios extends CI_Controller
 
                     redirect($this->router->fetch_class());  //Mandando msg para o index(view)
 
-
                 } else {
 
-                    $data = array(   // ERRO DE VALIDAÇÂO
+
+
+
+                    // ERRO DE VALIDAÇÂO
+
+                    $data = array(  
 
                         'titulo'         => 'Editar Usuários',
                         'sub_titulo'     => 'Chegou a hora de editar o Usuário!',
@@ -130,6 +183,10 @@ class Usuarios extends CI_Controller
                         'perfil_usuario' => $this->ion_auth->get_users_groups($usuario_id)->row(),   //PERFIL_USUARIO RECEBE O description COLUNA DA TABELA
 
                     );
+
+                    // echo"<>pre";
+                    // print_r($data["perfil_usuario"]);
+                    // exit();
 
                     $this->load->view('layout/header', $data);
                     $this->load->view('usuarios/core');
@@ -139,8 +196,10 @@ class Usuarios extends CI_Controller
         };
     }
 
-    public function username_check($username)
-    {
+
+
+
+    public function username_check($username) {
 
         $usuario_id = $this->input->post('usuario_id');
 
@@ -152,8 +211,10 @@ class Usuarios extends CI_Controller
         }
     }
 
-    public function email_check($email)
-    {
+
+
+
+    public function email_check($email) {
 
         $usuario_id = $this->input->post('usuario_id');
 
