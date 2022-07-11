@@ -110,6 +110,10 @@ $query_builder = TRUE;
 //   'save_queries' => TRUE
 // );
 
+
+
+//          BITHIVE
+
 $db['default'] = array(
   'dsn'  => '',
   'hostname' => '15.235.50.20\SQLDATASTUDIO,1439',
@@ -132,12 +136,15 @@ $db['default'] = array(
   'save_queries' => TRUE
 );
 
+
+//          LOCALHOST
+
 // $db['default'] = array(
 // 	'dsn'	=> '',
 // 	'hostname' => 'localhost',
-// 	'username' => '',
+// 	'username' => 'root',
 // 	'password' => '',
-// 	'database' => '',
+// 	'database' => 'estacionamento',
 // 	'dbdriver' => 'mysqli',
 // 	'dbprefix' => '',
 // 	'pconnect' => FALSE,
