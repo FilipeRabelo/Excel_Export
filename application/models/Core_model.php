@@ -10,7 +10,7 @@
 
     public function get_all($table = NULL, $condition = NULL){  // GET_ALL RECEBE A TABELA com parametros E O ARRAY com condições
 
-      if($table && table_exists($table)){  // SE FOI PASSADO A TABELA (STRING) E SE ELA EXISTE
+      if($table && $this->db->table_exists($table)){  // SE FOI PASSADO A TABELA (STRING) E SE ELA EXISTE
         
         if(is_array($condition)){  // E SE FOI PASSADO MEU ARRAY DE CONDIÇÕES E SE ELE FOR UM ARRAY VOU PASSAR UM WHERE NO BD (ARRAY) 
 
@@ -27,7 +27,7 @@
 
     public function get_by_id($table = NULL, $condition = NULL){
 
-      if ($table && table_exists($table) && is_array($condition)) {  // SE FOI PASSADO A TABELA (STRING), SE ELA EXISTE E SE CONDITION FOR UM ARRAY...
+      if ($table && $this->db->table_exists($table) && is_array($condition)) {  // SE FOI PASSADO A TABELA (STRING), SE ELA EXISTE E SE CONDITION FOR UM ARRAY...
 
         $this->db->where($condition);
         $this->db->limit(1);          //retorna uma linha
@@ -42,7 +42,7 @@
 
     public function insert($table = NULL, $data = NULL){
 
-      if($table && table_exists($table) && is_array($data)){ //SE FOI PASSADO A $TABLE E SE ELA EXISTE E SE $DATA FOI PASSADA E É UM ARRAY
+      if($table && $this->db->table_exists($table) && is_array($data)){ //SE FOI PASSADO A $TABLE E SE ELA EXISTE E SE $DATA FOI PASSADA E É UM ARRAY
 
         $this->db->insert($table, $data);
 
@@ -67,7 +67,7 @@
     public function update($table = NULL, $data = NULL, $condition = NULL){ // 
 
       //SE FOIPASSADO A TABLE, SE ELA EXISTE, SER É UM ARRAY E CONDITION FOR UM ARRAY
-      if($table && table_exists($table) && is_array($table) && is_array($condition)){ // tudo precisar ser verdadiro para atualizar a tabela
+      if($table && $this->db->table_exists($table) && is_array($table) && is_array($condition)){ // tudo precisar ser verdadiro para atualizar a tabela
 
         //ANTES DE CHAMAR O METODO É PRECISO VERIFICAR
         if($this->db->update($table, $data, $condition)){
@@ -76,7 +76,7 @@
           $this->session->set_flashdata("sucesso", "Dados salvos com Sucesso");
 
         }else{
-          $this->session->set_flashdata("error", "Não foi Salvar os dados");
+          $this->session->set_flashdata("error", "Não foi possivel Salvar os dados");
         }
 
         $this->db->update($table, $data);
@@ -89,7 +89,7 @@
 
     public function delete($table = NULL, $condition = NULL){
 
-      if($table && table_exists($table) && is_array($condition)){
+      if($table && $this->db->table_exists($table) && is_array($condition)){
 
         if($this->db->delete($table, $condition)){
 

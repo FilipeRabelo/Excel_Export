@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 require FCPATH . 'vendor/autoload.php';
 
-class Chargeback extends CI_Controller {
+class ChargeBack extends CI_Controller {
 
   public function __construct()
   {
@@ -11,8 +11,7 @@ class Chargeback extends CI_Controller {
     $this->load->model('chargeback_model');
   }
 
-  public function index()
-  {
+  public function index() {
 
     $data = array(
       'titulo'     => 'ChargeBack',

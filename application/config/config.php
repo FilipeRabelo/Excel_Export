@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/Excel_Export/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';   // PARA RETIRAR O INDEX.PHP DAS URLS
 
 /*
 |--------------------------------------------------------------------------

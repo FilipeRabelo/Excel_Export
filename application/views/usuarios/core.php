@@ -117,8 +117,8 @@
 
                       <?php if (isset($user)) : ?>
 
-                        <option value="0" <?php echo ($user->active == 0 ? 'selected' : '') ?>>Não esta Ativo</option>
-                        <option value="1" <?php echo ($user->active == 1 ? 'selected' : '') ?>>Esta Ativo</option>
+                        <option value="0" <?php echo ($user->active == 0 ? 'selected' : ''); ?>>Não esta Ativo</option>
+                        <option value="1" <?php echo ($user->active == 1 ? 'selected' : ''); ?>>Esta Ativo</option>
 
                       <?php else : ?>
 
@@ -142,8 +142,8 @@
 
                 <?php endif; ?>
 
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button class="btn btn-light">Cancel</button>
+                <button type="submit" class="btn btn-success mr-2">Salvar</button>
+                <a class="btn btn-info" href="<?= base_url($this->router->fetch_class()); ?>">Voltar</a>               
 
               </form>
 
