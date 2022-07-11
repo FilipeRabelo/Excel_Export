@@ -4,20 +4,22 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content bg-dark">
+    <div class="main-content ">
         <div class="container-fluid">
 
             <div class="page-header">
                 <div class="row align-items-end">
+
                     <div class="col-lg-8">
                         <div class="page-header-title">
                             <i class="ik ik-users bg-blue"></i>
                             <div class="d-inline">
-                                <h5 style="color: white;"><?= $titulo; ?></h5>
-                                <span style="color: white;"><?= $sub_titulo ?></span>
+                                <h5><?= $titulo; ?></h5>
+                                <span><?= $sub_titulo ?></span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-4">
                         <nav class="breadcrumb-container" aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -28,6 +30,7 @@
                             </ol>
                         </nav>
                     </div>
+
                 </div>
             </div>
 
@@ -49,14 +52,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header font-weight-bold"><a class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core/'); ?>">+ Novo</a></div> <!-- href esta apontando o controlador e o metado! -->
-                        <!-- <div class="card-header ">
-                             <a href="<?= base_url('usuarios/core/'); ?>" title="Novo cadastro <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-success ">+ &nbsp; Novo</a>
-                        </div> -->
-                        <div class="card-body table-responsive">
 
-                            <table class="data-table table-responsive table font-weight-bold table-primary">
+                        <div class="card-header font-weight-bold">
+                            <a data-toggle="tooltip" data-placement="right" title="Cadastrar <?= $this->router->fetch_class(); ?>" class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core/'); ?>">+ Novo</a>
+                        </div>     
 
+                        <div class="card-body">
+
+                            <table class="data_table table font-weight-bold table-primary">
 
                                 <thead class="table table-primary table-hover ">
                                     <tr>
@@ -65,8 +68,9 @@
                                         <th>E-mail</th>
                                         <th>Perfil</th>
                                         <th>Nome</th>
-                                        <th class="nosort text-center pr-25">Ações</th>
                                         <th>Ativo</th>
+                                        <th class="nosort text-center pr-25">Ações</th>
+                                    </tr>
                                 </thead>
 
                                 <tbody>
@@ -78,13 +82,12 @@
                                             <td><?= $user->email       ?></td>
                                             <td><?= ($this->ion_auth->is_admin($user->id) ? 'Administrador' : 'Atendente'); ?></td>
                                             <td><?= $user->first_name  ?></td>
+                                            <td><?= ($user->active == 1 ? '<span class="badge badge-pill badge-success mb-1">Sim</span>' : '<span class="badge badge-pill badge-warning mb-1">Não</span>'); ?></td>
                                             <td class="text-center">
-                                                <a href="<?= base_url('usuarios/core/' . $user->id); ?>" title="Editar <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-primary"><i class="ik ik-edit-2"></i>Editar </a>
+                                                <a href="<?= base_url('usuarios/core/' . $user->id); ?>" data-toggle="tooltip" data-placement="bottom" title="Editar <?= $this->router->fetch_class(); ?>" class="btn btn-primary"><i class="ik ik-edit-2"></i>Editar </a>
                                                 <a href="#" title="Excluir <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-danger"><i class="ik ik-info"></i> Excluir</a>
                                             </td>
-                                            <td><?= ($user->active == 1 ? '<span class="badge badge-pill badge-success mb-1">Sim</span>' : '<span class="badge badge-pill badge-warning mb-1">Não</span>'); ?></td>
                                         </tr>
-
                                     <?php endforeach; ?>
                                 </tbody>
 

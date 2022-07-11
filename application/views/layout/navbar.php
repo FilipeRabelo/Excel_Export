@@ -1,4 +1,4 @@
-<header class="header-top" header-theme="dark">
+<header class="header-top" header-theme="blue">
   <div class="container-fluid">
     <div class="d-flex justify-content-between">
 

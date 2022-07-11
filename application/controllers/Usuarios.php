@@ -4,12 +4,6 @@ defined('BASEPATH') or exit('Ação não permitida');
 class Usuarios extends CI_Controller
 {
 
-    // public function __construct()
-    // {
-
-    // }
-
-
     public function index() {  //chama o modulo usuario
 
         //ARQUIVOS SENDO ENVIADOS PARA A VIEW 
@@ -55,22 +49,38 @@ class Usuarios extends CI_Controller
                                                                                     //valida cada campo...
             $this->form_validation->set_rules('first_name',  'Nome',       'trim|required|min_length[4]|max_length[50]');
             $this->form_validation->set_rules('last_name',   'Sobre-Nome', 'trim|required|min_length[4]|max_length[50]');
-            $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[]|max_length[50]|is_unique[users.username]');  //verifica cada campo no banco para ver se ja existe
+            $this->form_validation->set_rules('username',    'Usuario',    'trim|required|min_length[4]|max_length[50]|is_unique[users.username]');  //verifica cada campo no banco para ver se ja existe
             $this->form_validation->set_rules('email',       'E-Mail',     'trim|valid_email|required|min_length[6]|max_length[50]|is_unique[users.email]');
-            $this->form_validation->set_rules('password',    'Password',   'trim|required|min_length[6]|max_length[50]');
-            $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|required|min_length[6]|max_length[50]|matches[password]');
+            $this->form_validation->set_rules('password',    'Password',   'trim|required|min_length[6]');
+            $this->form_validation->set_rules('confirmacao', 'Confirma',   'trim|required|min_length[6]|matches[password]');
 
             //SE VALIDOU COMECA A TRABALHAR COM A MONTAGEM DO ARRAY DE DADOS E INSERÇÃO NO BANCO DE DADOS
 
-            if($this->form_validation->run) {// se o form_validation rodou...1
-                
-                exit('Validado');
+            if($this->form_validation->run()) {// se o form_validation rodou...1
+
+                $username        = $this->input->post('username');
+                $password        = $this->input->post('password');
+                $email           = $this->input->post('email');
+                $additional_data = array(
+                'first_name'     => $this->input->post("first_name"),
+                'last_name'      => $this->input->post('last_name'),
+                'active'         => $this->input->post('active'),
+                );
+                $group           = array($this->input->post('perfil')); 
+
+                if($this->ion_auth->register($username, $password, $email, $additional_data, $group)){
+                    $this->session->set_flashdata('sucesso', 'Dados salvos com seucesso');
+                }else{
+                    $this->session->set_flashdata('error', 'Erro ao salvar os dados.!!');
+                }
+
+                redirect($this->router->fetch_class());
+
             }else{               
 
                 // ERRO DE VALIDAÇÂO
 
                 $data = array(
-
                     'titulo'         => 'Cadastrar Usuário',
                     'sub_titulo'     => 'Chegou a hora de Cadastrar um novo Usuário!',                    
                 );
@@ -128,7 +138,6 @@ class Usuarios extends CI_Controller
                         $this->input->post()
                     );
 
-
                     $password = $this->input->post('password');
 
                     if (!$password) { //se nao passar o password nao atualiza a senha // usuario nao quer atualiazar a senha
@@ -169,9 +178,6 @@ class Usuarios extends CI_Controller
                     redirect($this->router->fetch_class());  //Mandando msg para o index(view)
 
                 } else {
-
-
-
 
                     // ERRO DE VALIDAÇÂO
 

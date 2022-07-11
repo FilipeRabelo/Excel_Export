@@ -4,7 +4,7 @@
 
   <?php $this->load->view('layout/sidebar'); ?>
 
-  <div class="main-content bg-dark">
+  <div class="main-content">
     <div class="container-fluid">
 
       <div class="page-header">
@@ -13,8 +13,8 @@
             <div class="page-header-title">
               <i class="ik ik-menu bg-blue"></i>
               <div class="d-inline">
-                <h5 style="color: white;"><?= $titulo; ?></h5>
-                <span style="color: white;"><?= $sub_titulo ?></span>
+                <h5 ><?= $titulo; ?></h5>
+                <span><?= $sub_titulo ?></span>
               </div>
             </div>
           </div>
