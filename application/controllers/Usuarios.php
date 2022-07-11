@@ -58,15 +58,20 @@ class Usuarios extends CI_Controller
 
             if($this->form_validation->run()) {// se o form_validation rodou...1
 
-                $username        = $this->input->post('username');
-                $password        = $this->input->post('password');
-                $email           = $this->input->post('email');
+                $username        = html_escape($this->input->post('username'));
+                $password        = html_escape($this->input->post('password'));
+                $email           = html_escape($this->input->post('email'));
                 $additional_data = array(
                 'first_name'     => $this->input->post("first_name"),
                 'last_name'      => $this->input->post('last_name'),
                 'active'         => $this->input->post('active'),
                 );
                 $group           = array($this->input->post('perfil')); 
+
+                //prcisa sanitizar o array
+
+                $additional_data = html_escape($additional_data);  // Para limpar o array 
+
 
                 if($this->ion_auth->register($username, $password, $email, $additional_data, $group)){
                     $this->session->set_flashdata('sucesso', 'Dados salvos com seucesso');
