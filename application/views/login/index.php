@@ -18,19 +18,21 @@
                     <?php if ($message = $this->session->flashdata('error')) : ?>
 
                         <div class="row">
-                        <div class="col-md-12">
-                            <div class="alert bg-danger alert-success text-white alert-dismissible">
-                            <strong><?= $message ?></strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                                <i class="ik ik-x"></i>
-                            </button>
+                            <div class="col-md-12">
+                                <div class="alert bg-danger alert-success text-white alert-dismissible">
+                                    <strong><?= $message ?></strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                        <i class="ik ik-x"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        </div>
 
-                     <?php endif; ?> 
-                     
-                    <p class="text-center text-primary font-weight-bold">Feliz em vê-lo novamente!!</p>
+                    <?php endif; ?>
+
+                    <h3 class="text-dark font-weight-bold">Seja muito bem Vindo(a)!</h3>
+
+                    <p class=" text-dark font-weight-bold">Feliz em vê-lo novamente!!</p>
 
                     <form name="form_auth" method="POST" action="<?= base_url('login/auth') ?>">
 

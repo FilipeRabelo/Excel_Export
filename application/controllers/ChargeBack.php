@@ -5,11 +5,21 @@ require FCPATH . 'vendor/autoload.php';
 
 class ChargeBack extends CI_Controller {
 
-  public function __construct()
-  {
-    parent::__construct();
-    $this->load->model('chargeback_model');
-  }
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('chargeback_model');
+
+        if (!$this->ion_auth->logged_in()) {
+
+            redirect('/');
+        }
+    }
+
+//   public function __construct()
+//   {
+//     parent::__construct();
+//     $this->load->model('chargeback_model');
+//   }
 
   public function index() {
 

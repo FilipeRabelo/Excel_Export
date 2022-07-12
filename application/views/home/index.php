@@ -4,8 +4,8 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content">
-        <div class="container-fluid">
+    <div class="main-content bg-info">
+        <div class="container-fluid ">
 
             <div class="page-header">
                 <div class="row align-items-end">
@@ -64,7 +64,7 @@
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-body">
-                                
+
                                     <div class="d-flex align-items-center flex-row mt-30">
                                         <div class="p-2 f-50 text-info"><i class="wi wi-day-showers"></i> <span>23<sup>°</sup></span></div>
                                         <div class="p-2">
@@ -89,7 +89,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                  
+
                                 </div>
                             </div>
                         </div>

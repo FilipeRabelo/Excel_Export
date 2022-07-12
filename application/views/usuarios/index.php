@@ -39,8 +39,8 @@
             <?php if ($message = $this->session->flashdata('sucesso')) : ?>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-success text-white alert-dismissible fade show" role="alert">
-                            <strong><i class="fas fa-smile"></i>&nbsp<?= $message ?></strong>
+                        <div class="alert alert-success font-weight-bold text-white bg-success alert-dismissible fade show" role="alert">
+                            <strong><i class="fas fa-smile"></i>&nbsp;<?= $message ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <i class="ik ik-x"></i>
                             </button>
@@ -57,8 +57,8 @@
             <?php if ($message = $this->session->flashdata('error')) : ?>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-danger text-white bg-danger alert-dismissible fade show" role="alert">
-                            <strong><i class="fas fa-smile"></i>&nbsp<?= $message ?></strong>
+                        <div class="alert alert-danger text-white font-weight-bold bg-danger alert-dismissible fade show" role="alert">
+                            <strong><i class="fas fa-smile"></i>&nbsp;<?= $message ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <i class="ik ik-x"></i>
                             </button>

@@ -4,6 +4,15 @@
 
     class Usuarios extends CI_Controller {
 
+        public function __construct()  {
+            parent::__construct();
+
+            if (!$this->ion_auth->logged_in()) {
+
+                redirect('/');
+            }
+        }
+
         public function index() {  //chama o modulo usuario
 
             //ARQUIVOS SENDO ENVIADOS PARA A VIEW 
@@ -243,10 +252,11 @@
 
 
 
+        //METODO   DELETE  camadas de defesa // 
 
         public function del($usuario_id = NULL){
 
-            if(!$usuario_id || !$this->core_model->get_by_id("users", array("id" => $usuario_id)){
+            if(!$usuario_id || !$this->core_model->get_by_id("users", array("id" => $usuario_id))){
 
                 $this->session->set_flashdata("error", "Usuário nâo encontrado");
                 
@@ -273,12 +283,11 @@
 
                 }else{
 
-                    $this->session->set_flashdata("error", "Não foi possivel excluir o registro);
+                    $this->session->set_flashdata("error", "Não foi possivel excluir o registro");
 
                 }
 
                 redirect($this->router->fetch_class());
-
 
             }      
 
