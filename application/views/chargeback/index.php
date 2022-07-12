@@ -4,7 +4,7 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content  bg-info">
+    <div class="main-content ">
         <div class="container-fluid">
 
             <div class="page-header">
@@ -33,7 +33,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="p-3 mb-2 bg-light text-center text-info font-weight-bold shadow-lg p-3 mb-5 bg-white rounded">Enviando Planilha ChargeBack para Banco de Dados Bit Hive!</h4>
+                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-white rounded">Enviando Planilha ChargeBack para Banco de Dados Bit Hive!</h4>
                     <hr>
                     <?php
                     if ($this->session->flashdata('message')) {
@@ -45,7 +45,7 @@
                             <input type="file" name="upload_file" class="form-control " placeholder="Enter Name" id="upload_file" required>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-white float-right font-weight-bold" value="Enviar Excel para Banco de Dados">
+                            <input type="submit" name="submit" class="btn btn-primary float-right font-weight-bold" value="Enviar Excel para Banco de Dados">
                         </div>
                     </form>
                     <br>

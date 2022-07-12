@@ -4,7 +4,7 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content  bg-info">
+    <div class="main-content ">
         <div class="container-fluid ">
 
             <div class="page-header">

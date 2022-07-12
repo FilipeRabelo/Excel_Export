@@ -4,14 +4,14 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content bg-info">
+    <div class="main-content">
         <div class="container-fluid ">
 
             <div class="page-header">
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-bar-chart-2 bg-blue"></i>
+                            <i class="ik ik-bar-chart-2  bg-blue"></i>
                             <div class="d-inline">
                                 <h5><?= $titulo; ?></h5>
                                 <span><?= $sub_titulo ?></span>
