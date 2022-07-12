@@ -4,8 +4,8 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content ">
-        <div class="container-fluid">
+    <div class="main-content  bg-info">
+        <div class="container-fluid ">
 
             <div class="page-header">
                 <div class="row align-items-end">
@@ -34,10 +34,12 @@
                 </div>
             </div>
 
+            <!-- FLASH_DATA SUCESSO -->
+
             <?php if ($message = $this->session->flashdata('sucesso')) : ?>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <div class="alert alert-success text-white alert-dismissible fade show" role="alert">
                             <strong><i class="fas fa-smile"></i>&nbsp<?= $message ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <i class="ik ik-x"></i>
@@ -49,17 +51,40 @@
                 exit(); -->
             <?php endif; ?>
 
+
+            <!-- FLASH_DATA ERROR -->
+
+            <?php if ($message = $this->session->flashdata('error')) : ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger text-white bg-danger alert-dismissible fade show" role="alert">
+                            <strong><i class="fas fa-smile"></i>&nbsp<?= $message ?></strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <i class="ik ik-x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- echo"$message";
+                exit(); -->
+            <?php endif; ?>
+
+
+
+
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
 
                         <div class="card-header font-weight-bold">
                             <a data-toggle="tooltip" data-placement="right" title="Cadastrar <?= $this->router->fetch_class(); ?>" class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core/'); ?>">+ Novo</a>
-                        </div>     
+                        </div>
 
                         <div class="card-body">
 
-                            <table class="data_table table font-weight-bold table-primary">
+                            <table class="data_table table font-weight-bold table-info">
 
                                 <thead class="table table-primary table-hover ">
                                     <tr>
@@ -84,10 +109,32 @@
                                             <td><?= $user->first_name  ?></td>
                                             <td><?= ($user->active == 1 ? '<span class="badge badge-pill badge-success mb-1">Sim</span>' : '<span class="badge badge-pill badge-warning mb-1">Não</span>'); ?></td>
                                             <td class="text-center">
-                                                <a href="<?= base_url('usuarios/core/' . $user->id); ?>" data-toggle="tooltip" data-placement="bottom" title="Editar <?= $this->router->fetch_class(); ?>" class="btn btn-primary"><i class="ik ik-edit-2"></i>Editar </a>
-                                                <a href="#" title="Excluir <?= $this->router->fetch_class(); ?>" data-toggle="tooltip" data-placement="bottom" class="btn btn-danger"><i class="ik ik-info"></i> Excluir</a>
+                                                <a href="<?= base_url($this->router->fetch_class() . '/core/' . $user->id); ?>" data-toggle="tooltip" data-placement="bottom" title="Editar <?= $this->router->fetch_class(); ?>" class="btn btn-primary"><i class="ik ik-edit-2"></i>Editar </a>
+                                                <button type="button" title="Excluir <?= $this->router->fetch_class(); ?>" class="btn btn-danger" data-toggle="modal" data-target="#user-<?php echo $user->id; ?>"><i class="ik ik-info"></i> Excluir</button>
                                             </td>
                                         </tr>
+
+                                        <!-- modal -->
+
+                                        <div class="modal fade " id="user-<?= $user->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered " role="document">
+                                                <div class="modal-content text-center">
+                                                    <div class="modal-header ">
+                                                        <h5 class="modal-title " id="exampleModalCenterLabel"> <i class="fas fa-exclamation-triangle text-danger"></i>&nbsp; Excluir Usuário &nbsp;<i class="fas fa-exclamation-triangle text-danger"></i></h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ATENÇÂO! Deseja Excluir o Usuário?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" data-toggle="tooltip" data-placement="bottom" title="Voltar" class=" btn btn-info" data-dismiss="modal">Não! Voltar.</button>
+
+                                                        <a data-toggle="tooltip" data-placement="bottom" title="Excluir <?= $this->router->fetch_class(); ?>" href="<?= base_url($this->router->fetch_class() . '/del/' . $user->id); ?>" class=" btn btn-danger">Sim, Excluir!! </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     <?php endforeach; ?>
                                 </tbody>
 

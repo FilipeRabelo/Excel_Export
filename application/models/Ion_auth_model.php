@@ -842,9 +842,10 @@ class Ion_auth_model extends CI_Model
 			return FALSE;
 		}
 
-		// Users table.
+		// Users table.   LINHA 845
 		$data = [
 			$this->identity_column => $identity,
+            'username' => $identity, //É PRECISO COLOCAR PARA ADD O USERNAME
 			'password' => $password,
 			'email' => $email,
 			'ip_address' => $ip_address,
