@@ -20,12 +20,9 @@ class MundiPag_model extends CI_Model
         $comparacomArray   = 0;                   // inicia com zero para comparar o incremento de cada
         $quantidade        = 10; //1              // aqui quantidade inicial para ser incrementada 
 
-
         if ($data_salva != '') {
 
             for ($i = 1; $i <= $quantidade; $i++) {
-
-
 
                 $this->db->insert('mundipag_excel', $data_salva[$i]);
 
@@ -37,6 +34,7 @@ class MundiPag_model extends CI_Model
                 if ($i == $tamanhoArray) {
 
                     $i = $tamanhoArray + 2;
+                    return $this->qntRegistros;
                 } else {
                     
                     if ($i == $quantidade) {
@@ -50,7 +48,7 @@ class MundiPag_model extends CI_Model
                 }
             };
 
-            return $this->qntRegistros;
+            //return $this->qntRegistros;
 
             // $i recebe o primeiro numero valido do array como tem que pular a primeira linha ele recebe 1 ja que a primeira linha e zero.
 

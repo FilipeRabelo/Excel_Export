@@ -1,7 +1,7 @@
 <div class="app-sidebar colored">
 
     <div class="sidebar-header bg-primary">
-        <a class="header-brand" href="<?= base_url('/'); ?>">
+        <a class="header-brand " data-toggle="tooltip" title="Ir para Home" href="<?= base_url('home'); ?>">
             <div class="logo-img">
                 <i class="ik ik-folder"></i>
                 <!-- <img src=" src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> -->
@@ -24,11 +24,11 @@
                 </div>
 
                 <div class="nav-item">
-                    <a href="<?= base_url('/mundipag'); ?>"><i class="ik ik-menu"></i><span>MundiPag </span></a>
+                    <a href="<?= base_url('MundiPag'); ?>"><i class="ik ik-menu"></i><span>MundiPag </span></a>
                 </div>
 
                 <div class="nav-item">
-                    <a href="<?= base_url('/chargeback'); ?>"><i class="ik ik-layers"></i><span>Chargeback</span></a>
+                    <a href="<?= base_url('ChargeBack'); ?>"><i class="ik ik-layers"></i><span>Chargeback</span></a>
                 </div>
 
                 <div class="nav-item has-sub">

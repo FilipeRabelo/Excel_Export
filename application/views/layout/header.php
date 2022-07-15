@@ -11,7 +11,7 @@
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon2.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href=" <?= base_url('favicon/favicon3.ico'); ?>" />
 
   <style>
     a {
@@ -43,7 +43,7 @@
 
   <link rel="stylesheet" href="<?= base_url('public/dist/css/theme.min.css'); ?>">
 
-  <script src="<?= base_url('src/js/vendor/modernizr-2.8.3.min.js'); ?>"></script>
+  <script src="<?= base_url('public/src/js/vendor/modernizr-2.8.3.min.js'); ?>"></script>
 
   <?php if (isset($styles)) : ?>
     <!-- SE VARIAVEL $STYLES TIVER SETADA FACA UM FOREACH NELA -->

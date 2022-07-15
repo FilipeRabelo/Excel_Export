@@ -18,7 +18,7 @@
 
                 <div class="dropdown">
 
-                    <a href="<?= base_url('login/logout/auth'); ?>" class="dropdown-item bg-info " ><i data-toggle="dropdown" title="SAIR" class="ik ik-power dropdown-icon"></i> Logout</a>
+                    <a href="<?= base_url('login/logout/auth'); ?>" class="dropdown-item bg-info " ><i data-toggle="dropdown" title="SAIR" class="ik ik-power dropdown-icon" data-toggle="tooltip" title="Sair do Sistema"></i> Logout</a>
 
                 </div>
 

@@ -11,7 +11,7 @@ class MundiPag extends CI_Controller{
   public function __construct() {
 
     parent::__construct();
-    $this->load->model('mundipag_model');
+    $this->load->model('MundiPag_model');
 
         if (!$this->ion_auth->logged_in()) {
 
@@ -110,14 +110,14 @@ class MundiPag extends CI_Controller{
     // var_dump($dados_planilha);
     // exit();    
 
-    $inserdata = $this->mundipag_model->inserir_lote($data_salva); //ESTA RECEBENDO o array E INSERINDO LOTES NO DB / insert_batch  -> INSERINDO LOTES
+    $inserdata = $this->MundiPag_model->inserir_lote($data_salva); //ESTA RECEBENDO o array E INSERINDO LOTES NO DB / insert_batch  -> INSERINDO LOTES
 
     if ($inserdata > 0) {
       $this->session->set_flashdata('message', '<div class="alert alert-success">Adicionado' . '<?= $inserdata ?>' . ' Registros com sucesso </div>',);
-      redirect('mundipag/index');
+      redirect('MundiPag');
     } else {
       $this->session->set_flashdata('message', '<div class="alert alert-danger">Dados Não carregados. Por favor, tente novamente.</div>');
-      redirect('mundipag/index');
+      redirect('MundiPag');
     }
   }
 }
