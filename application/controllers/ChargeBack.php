@@ -62,7 +62,7 @@ require FCPATH . 'vendor/autoload.php';
                     'bandeira'            => $value[3],   //4
                     'tipoTransacao'       => $value[4],   //5
                     'd_c'                 => $value[5],   //6            
-                    'dataTransacao'       => convertDataJulianExcel($value[6]),,   //7 
+                    'dataTransacao'       => convertDataJulianExcel($value[6]),                     
                     'authorizationCode'   => $value[7],   //8
                     'valorTotalTransacao' => $value[8],   //9  
                     'numeroDeParcelas'    => $value[9],   //10
@@ -85,8 +85,8 @@ require FCPATH . 'vendor/autoload.php';
                     'pagoOuNao'           => $value[26],  //27
                     'mes'                 => isset($value[27]) ? $value[27] : ''  //28  
 
-                );
-
+                );             
+              
                 $incrementar_array++;            
             }
 

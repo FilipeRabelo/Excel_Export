@@ -202,10 +202,10 @@
         </div>
     </div>
 
-    <footer class="footer fixed-bottom">
+    <footer class="footer fixed-bottom bg-info">
         <div class="w-100 clearfix">
-            <span class="text-center text-primary font-weight-bold text-sm-left d-md-inline-block">Copyright © <?= date('Y') ?> ThemeKit v2.0. All Rights Reserved <a href="https://bithive.com.br/">Bit Hive Smart Solutions </a>.</span>
-            <span class="float-none font-weight-bold text-primary float-sm-right mt-1 mt-sm-0 text-center">Developed <i class="fa fa-heart text-danger"></i> por <a href="https://github.com/FilipeRabelo" class="text-dark" target="_blank">Filipe Rabelo F Lana</a></span>
+            <span class="text-center text-white font-weight-bold text-sm-left d-md-inline-block">Copyright © &nbsp;<?= date('Y') ?> <a href="https://bithive.com.br/">&nbsp;Bit Hive Smart Solutions</a></span>
+            <span class="float-none font-weight-bold text-white float-sm-right mt-1 mt-sm-0 text-center">Developed &nbsp;<i class="fa fa-heart text-danger"></i>&nbsp; por &nbsp; <a href="https://github.com/FilipeRabelo" class="text-dark" target="_blank">Filipe Rabelo F Lana</a></span>
         </div>
     </footer>
 

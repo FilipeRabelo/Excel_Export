@@ -1,6 +1,6 @@
 <div class="app-sidebar colored">
 
-    <div class="sidebar-header bg-primary">
+    <div class="sidebar-header bg-info">
         <a class="header-brand " data-toggle="tooltip" title="Ir para Home" href="<?= base_url('home'); ?>">
             <div class="logo-img">
                 <i class="ik ik-folder"></i>
@@ -12,12 +12,12 @@
         <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
     </div>
 
-    <div class="sidebar-content bg-primary">
+    <div class="sidebar-content bg-info">
         <div class="nav-container">
 
             <nav id="main-menu-navigation" class="navigation-main">
 
-                <div class="nav-lavel bg-primary text-white font-weight-bold ">Menu Export Excel</div>
+                <div class="nav-lavel bg-info text-white font-weight-bold ">Menu Export Excel</div>
 
                 <div class=" nav-item active">
                     <a href="<?= base_url('/home'); ?>"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>

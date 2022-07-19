@@ -41,7 +41,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header font-weight-bold"><?php echo (isset($users) ? 'Data da ultima alteração: &nbsp;' . formata_data_banco_com_hora($users->data_ultima_atualizacao) : 'Sem Atualização!!'); ?></div>
-                      
+
                         <div class="card-body">
 
                             <form class="forms-sample" name="form_core" method="POST">
@@ -49,7 +49,8 @@
                                 <div class="form-group row">
 
                                     <div class="col-md-6 mb-20">
-                                        <label>Nome</label>         <!--SE O USUARIO TIVER SETADO SIGNIFICA Q ESTAMOS EDITANDO, SE NAO TIVER SETADO SIGNIFICA Q ESTAMOS CADASTRANDO -->
+                                        <label>Nome</label>
+                                        <!--SE O USUARIO TIVER SETADO SIGNIFICA Q ESTAMOS EDITANDO, SE NAO TIVER SETADO SIGNIFICA Q ESTAMOS CADASTRANDO -->
                                         <input type="text" class="form-control" name="first_name" value="<?php echo (isset($user) ? $user->first_name : set_value('first_name')); ?>">
                                         <?php echo form_error('first_name', '<div class="text-danger">', '</div>'); ?>
                                     </div>
@@ -158,22 +159,22 @@
     <?php if ($message = $this->session->flashdata('error')) : ?>
 
         <div class="row">
-        <div class="col-md-12">
-            <div class="alert bg-success alert-success text-white alert-dismissible">
-            <strong><?= $message ?></strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="close">
-                <i class="ik ik-x"></i>
-            </button>
+            <div class="col-md-12">
+                <div class="alert bg-success alert-success text-white alert-dismissible">
+                    <strong><?= $message ?></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                        <i class="ik ik-x"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        </div>
 
-    <?php endif; ?> 
+    <?php endif; ?>
 
-    <footer class="footer fixed-bottom">
+    <footer class="footer fixed-bottom bg-info">
         <div class="w-100 clearfix">
-            <span class="text-center text-primary font-weight-bold text-sm-left d-md-inline-block">Copyright © <?= date('Y') ?> ThemeKit v2.0. All Rights Reserved <a href="https://bithive.com.br/">Bit Hive Smart Solutions </a>.</span>
-            <span class="float-none font-weight-bold text-primary float-sm-right mt-1 mt-sm-0 text-center">Developed <i class="fa fa-heart text-danger"></i> por <a href="https://github.com/FilipeRabelo" class="text-dark" target="_blank">Filipe Rabelo F Lana</a></span>
+            <span class="text-center text-white font-weight-bold text-sm-left d-md-inline-block">Copyright © &nbsp;<?= date('Y') ?> <a href="https://bithive.com.br/">&nbsp;Bit Hive Smart Solutions</a></span>
+            <span class="float-none font-weight-bold text-white float-sm-right mt-1 mt-sm-0 text-center">Developed &nbsp;<i class="fa fa-heart text-danger"></i>&nbsp; por &nbsp; <a href="https://github.com/FilipeRabelo" class="text-dark" target="_blank">Filipe Rabelo F Lana</a></span>
         </div>
     </footer>
 </div>

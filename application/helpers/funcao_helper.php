@@ -70,15 +70,18 @@
     function convertDataJulianExcel($d){
 
         if(is_numeric($d)){
+           
             $d = intval($d);
-        }else{
-            $d = 0;
-        }
-        $excelDate = $d; //2018-11-03
-        $miliseconds = ($excelDate - (25567 + 2)) * 86400 * 1000;
+        }else{            
+            $d =  0;
+        }     
+
+        $excelDate = $d + 1; //2018-11-03   //ADICIONADO + 1 POR CAUSA DO RETORNA DA DATA//        
+        $miliseconds = ($excelDate - (25567 + 2)) * 86400 * 1000 ;
         $seconds = $miliseconds / 1000;
 
         return date("Y-m-d", $seconds); //2018-11-03
+       
     }
 
 ?>

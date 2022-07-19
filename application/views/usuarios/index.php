@@ -82,9 +82,9 @@
                             <a data-toggle="tooltip" data-placement="right" title="Cadastrar <?= $this->router->fetch_class(); ?>" class="btn btn-success" href="<?= base_url($this->router->fetch_class() . '/core/'); ?>">+ Novo</a>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
 
-                            <table class="data_table table font-weight-bold table-info">
+                            <table class="table data_table font-weight-bold table-info">
 
                                 <thead class="table table-primary table-hover ">
                                     <tr>
@@ -101,6 +101,7 @@
                                 <tbody>
                                     <!-- RECUPERANDO USUARIOS DO control -->
                                     <?php foreach ($users as $user) : ?>
+
                                         <tr>
                                             <td><?= $user->id          ?></td>
                                             <td><?= $user->username    ?></td>
@@ -141,6 +142,7 @@
                             </table>
 
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -163,10 +165,10 @@
 
     <?php endif; ?> -->
 
-    <footer class="footer fixed-bottom">
+    <footer class="footer fixed-bottom bg-info">
         <div class="w-100 clearfix">
-            <span class="text-center text-primary font-weight-bold text-sm-left d-md-inline-block">Copyright © <?= date('Y') ?> ThemeKit v2.0. All Rights Reserved <a href="https://bithive.com.br/">Bit Hive Smart Solutions </a>.</span>
-            <span class="float-none font-weight-bold text-primary float-sm-right mt-1 mt-sm-0 text-center">Developed <i class="fa fa-heart text-danger"></i> por <a href="https://github.com/FilipeRabelo" class="text-dark" target="_blank">Filipe Rabelo F Lana</a></span>
+            <span class="text-center text-white font-weight-bold text-sm-left d-md-inline-block">Copyright © &nbsp;<?= date('Y') ?> <a href="https://bithive.com.br/">&nbsp;Bit Hive Smart Solutions</a></span>
+            <span class="float-none font-weight-bold text-white float-sm-right mt-1 mt-sm-0 text-center">Developed &nbsp;<i class="fa fa-heart text-danger"></i>&nbsp; por &nbsp; <a href="https://github.com/FilipeRabelo" class="text-dark" target="_blank">Filipe Rabelo F Lana</a></span>
         </div>
     </footer>
 
