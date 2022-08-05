@@ -50,6 +50,11 @@
                                                     <div class="day-name"><?= date('l') ?></div>
                                                     <div class="month"><?= date('M-Y H:i') ?></div>
                                                 </div>
+                                                <div class="p-2">
+                                                    <h5 class="mb-0">
+                                                        <small> Brasil, Belo Horizonte</small>
+                                                    </h5>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -58,41 +63,7 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-body">
-
-                                    <div class="d-flex align-items-center flex-row mt-30">
-                                        <div class="p-2 f-50 text-info"><i class="wi wi-day-showers"></i> <span>23<sup>°</sup></span></div>
-                                        <div class="p-2">
-                                            <h3 class="mb-0">
-                                                <option selected=""><?= date('l') ?></option>
-                                            </h3><small>Brasil, Belo Horizonte<option selected=""><?= date('d-M-Y H:i') ?></option></small>
-                                        </div>
-                                    </div>
-                                    <table class="table table-borderless">
-                                        <tbody>
-                                            <tr>
-                                                <td>Wind</td>
-                                                <td class="font-medium">ESE 17 mph</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Humidity</td>
-                                                <td class="font-medium">83%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Pressure</td>
-                                                <td class="font-medium">28.56 in</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="row clearfix">

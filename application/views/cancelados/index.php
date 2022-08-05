@@ -4,14 +4,14 @@
 
     <?php $this->load->view('layout/sidebar'); ?>
 
-    <div class="main-content">
-        <div class="container-fluid ">
+    <div class="main-content ">
+        <div class="container-fluid">
 
             <div class="page-header">
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-menu  bg-blue"></i>
+                            <i class="ik ik-layers bg-blue"></i>
                             <div class="d-inline">
                                 <h5><?= $titulo; ?></h5>
                                 <span><?= $sub_titulo ?></span>
@@ -24,7 +24,7 @@
                                 <li class="breadcrumb-item">
                                     <a data-toggle="tooltip" data-placement="bottom" title="Home" href="<?= base_url('/'); ?>"><i class=" ik ik-home"></i></a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= $titulo; ?></li>
+                                <li class="breadcrumb-item active" aria-current="page">Cancelamentos</li>
                             </ol>
                         </nav>
                     </div>
@@ -33,14 +33,14 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-info rounded">Enviando Planilha MundiPag para Banco de Dados Bit Hive!</h4>
+                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-info rounded">Enviando Planilha de Cancelamentos para Banco de Dados Bit Hive!</h4>
                     <hr>
                     <?php
                     if ($this->session->flashdata('message')) {
                         echo $this->session->flashdata('message');
                     }
                     ?>
-                    <form method="post" action="<?php echo base_url('MundiPag/spreadsheet_import'); ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?php echo base_url('Cancelados/spreadsheet_import'); ?>" enctype="multipart/form-data">
                         <div class="form-group input-group-lg ">
                             <input type="file" name="upload_file" class="form-control " placeholder="Enter Name" id="upload_file" required>
                         </div>
@@ -90,4 +90,5 @@
     </footer>
 
 </div> <!-- FIM DA ROW -->
+
 </div>

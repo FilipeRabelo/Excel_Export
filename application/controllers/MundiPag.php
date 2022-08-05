@@ -22,7 +22,7 @@ class MundiPag extends CI_Controller{
   public function index() {
 
     $data = array(
-      'titulo'     => 'MundiPag',
+      'titulo'     => 'Pagamentos',
       'sub_titulo' => 'Importe seu Arquivo Excel para o Banco de Dados Bit Hive!',
     );
 

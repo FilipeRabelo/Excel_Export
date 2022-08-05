@@ -33,7 +33,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-white rounded">Enviando Planilha ChargeBack para Banco de Dados Bit Hive!</h4>
+                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-info rounded">Enviando Planilha ChargeBack para Banco de Dados Bit Hive!</h4>
                     <hr>
                     <?php
                     if ($this->session->flashdata('message')) {
@@ -53,7 +53,7 @@
                 </div>
             </div> <!-- FIM DA ROW -->
 
-            <div class="row ">
+            <!-- <div class="row ">
                 <div class="col-md-12 ">
                     <div class="row ">
                         <div class="col-md-6 ">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- FIM DA ROW -->
+            </div> FIM DA ROW -->
 
         </div>
     </div>

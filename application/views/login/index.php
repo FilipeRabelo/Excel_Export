@@ -37,12 +37,12 @@
                     <form name="form_auth" method="POST" action="<?= base_url('login/auth') ?>">
 
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Digite seu E-mail!" required="">
+                            <input type="email" name="email" class="form-control" placeholder="Digite seu E-mail!" required>
                             <i class="ik ik-user"></i>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required="" value="123456">
+                            <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" required>
                             <i class="ik ik-lock"></i>
                         </div>
 
