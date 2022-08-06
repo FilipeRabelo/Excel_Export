@@ -11,7 +11,7 @@
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-bar-chart-2  bg-blue"></i>
+                            <i class="ik ik-bar-chart-2 text-dark bg-blue"></i>
                             <div class="d-inline">
                                 <h5><?= $titulo; ?></h5>
                                 <span><?= $sub_titulo ?></span>

@@ -12,7 +12,7 @@
 
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-users bg-blue"></i>
+                            <i class="ik ik-users text-dark bg-blue"></i>
                             <div class="d-inline">
                                 <h5><?= $titulo; ?></h5>
                                 <span><?= $sub_titulo ?></span>

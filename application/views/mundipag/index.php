@@ -11,7 +11,7 @@
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-menu  bg-blue"></i>
+                            <i class="ik ik-dollar-sign text-dark  bg-blue"></i>
                             <div class="d-inline">
                                 <h5><?= $titulo; ?></h5>
                                 <span><?= $sub_titulo ?></span>
@@ -33,7 +33,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-info rounded">Enviando Planilha MundiPag para Banco de Dados Bit Hive!</h4>
+                    <h4 class="p-3 mb-2 bg-light text-center text-dark font-weight-bold shadow-lg p-3 mb-5 bg-info rounded">Enviando Planilha de Pagamentos para Banco de Dados Bit Hive!</h4>
                     <hr>
                     <?php
                     if ($this->session->flashdata('message')) {

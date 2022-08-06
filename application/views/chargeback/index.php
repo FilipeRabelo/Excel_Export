@@ -11,7 +11,7 @@
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-layers bg-blue"></i>
+                            <i class="ik ik-layers text-dark bg-blue"></i>
                             <div class="d-inline">
                                 <h5><?= $titulo; ?></h5>
                                 <span><?= $sub_titulo ?></span>
@@ -52,33 +52,7 @@
                     <hr>
                 </div>
             </div> <!-- FIM DA ROW -->
-
-            <!-- <div class="row ">
-                <div class="col-md-12 ">
-                    <div class="row ">
-                        <div class="col-md-6 ">
-                            <div class="card  ">
-                                <div class="card-body  ">
-
-                                    <div class="card-body timeline ">
-                                        <div class="header bg-theme " style="background-image: url('img/placeholder/placeimg_400_200_nature.jpg')">
-                                            <div class="color-overlay d-flex align-items-center ">
-                                                <div class="day-number"><?= date('d') ?></div>
-                                                <div class="date-right ">
-                                                    <div class="day-name"><?= date('l') ?></div>
-                                                    <div class="month"><?= date('M-Y H:i') ?></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> FIM DA ROW -->
-
+          
         </div>
     </div>
 
