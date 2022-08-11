@@ -76,9 +76,22 @@ class EthocaAlerts extends CI_Controller{
         "shaUm_hashed_card_number"          => $value[9],
         "merchant"                          => $value[10],
         "merchant_descriptor_mid"           => $value[11],
-        
-
-
+        "issuer_name"                       => $value[12],
+        "source"                            => $value[13],
+        "transaction_type"                  => $value[14],
+        "outcome"                           => $value[15],
+        "refunded_not_settled"              => $value[16],
+        "partially_stopped_amount"          => $value[17],
+        "comments"                          => $value[18],
+        "existing_outcome"                  => $value[19],
+        "existing_comments"                 => $value[20],
+        "outcome_updated_date_time"         => $value[21],
+        "outcome_updated_by"                => $value[22],
+        "arn"                               => $value[23],
+        "transaction_id"                    => $value[24],
+        "chargeback_reason_code"            => $value[25],
+        "chargeback_amount"                 => $value[26],
+        "chargeback_currency"               => $value[27]
      
         // 'charge_id'                     => isset($value[37]) ? $value[37] : '' // 38   // 39 como id
       );
