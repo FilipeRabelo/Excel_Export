@@ -62,13 +62,12 @@ class EthocaAlerts extends CI_Controller{
 
       $data_salva[$incrementar_array] = array(
 
-        // id = 0
-        // 'order_id'                      => $value[0],   //1
+        // id = 0        
         "alert_type"                        => $value[0],  //1
         "ethoca_id"                         => $value[1],
-        "alert_date_time"                   => $value[2],
+        "alert_date_time"                   => $value[2], 
         "alert_age_hours"                   => $value[3],
-        "auth_date_time"                    => $value[4],
+        "auth_date_time"                    => convertDataJulianExcel($value[4]), 
         "auth_code"                         => $value[5],
         "amount"                            => $value[6],
         "currency"                          => $value[7],

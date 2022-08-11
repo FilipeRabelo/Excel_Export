@@ -73,45 +73,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-// $db['default'] = array(
-//   'domain'       => 'importcapta.bithive.com.br',
-//   'ip'           => '15.235.50.6 (n)',
-//   'hasCgi'       => 'y',
-//   'cpanelMod'    => 'paper_lantern',
-//   'homeRoot'     => '/dados',
-//   'quota'        => 'unlimited',
-//   'nameServer1'  => 'ns1.ns5011747.ip-15-235-50.net',
-//   'nameServer2'  => 'ns2.ns5011747.ip-15-235-50.net',
-//   'nameServer3'  => '',
-//   'nameServer4'  => '',
-//   'contact Email' => '',
-//   'package'      =>  'a5public_hosp.4',
-//   'feature List' =>  'default',
-//   'account Enhancements' => 'None',
-//   'language'     => 'pt_br',
-//   'dsn'      => '',
-//   'hostname' => '15.235.50.20\SQLDATASTUDIO,1439',
-//   'username' => 'importcaptabithi',
-//   'password' => '^bNz}P{#5j89',
-//   'database' => 'excel_convert',
-//   'dbdriver' => 'sqlsrv',
-//   'dbprefix' => '',
-//   'pconnect' => FALSE,
-//   'db_debug' => (ENVIRONMENT !== 'production'),
-//   'cache_on' => FALSE,
-//   'cachedir' => '',
-//   'char_set' => 'utf8',
-//   'dbcollat' => 'utf8_general_ci',
-//   'swap_pre' => '',
-//   'encrypt'  => FALSE,
-//   'compress' => FALSE,
-//   'stricton' => TRUE, // TRUE Para hospedagem
-//   'failover' => array(),
-//   'save_queries' => TRUE
-// );
-
-
-
 //          BITHIVE
 
 $db['default'] = array(
