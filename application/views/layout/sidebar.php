@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="nav-item">
-                    <a class="text-dark" href="<?= base_url('EthocaAlerts'); ?>"><i class="ik ik-minus-square text-dark"></i><span>Ethoca Alerts Excel</span></a>
+                    <a class="text-dark" href="<?= base_url('EthocaAlerts'); ?>"><i class="ik ik-alert-octagon text-dark"></i><span>Ethoca Alerts Excel</span></a>
                 </div>
 
                 <div class="nav-item">
