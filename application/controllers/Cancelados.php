@@ -68,35 +68,8 @@ require FCPATH . 'vendor/autoload.php';
                 'pagamento_retido'              => $value[9],
                 'data'                          => convertDataJulianExcel($value[10]),
                 'valor'                         => $value[11]
-
-                    // 'stoneCode'           => $value[0],   //1
-                    // 'nomeFantasia'        => $value[1],   //2          
-                    // 'stoneId'             => $value[2],   //3
-                    // 'bandeira'            => $value[3],   //4
-                    // 'tipoTransacao'       => $value[4],   //5
-                    // 'd_c'                 => $value[5],   //6            
-                    // 'dataTransacao'       => convertDataJulianExcel($value[6]),                     
-                    // 'authorizationCode'   => $value[7],   //8
-                    // 'valorTotalTransacao' => $value[8],   //9  
-                    // 'numeroDeParcelas'    => $value[9],   //10
-                    // 'valorParcela'        => $value[10],  //11
-                    // 'parcela'             => $value[11],  //12
-                    // 'panMascarado'        => $value[12],  //13
-                    // 'dataCBK'             => convertDataJulianExcel($value[13]), 
-                    // 'tipoChargeback'      => $value[14],  //15
-                    // 'arn'                 => $value[15],  //16
-                    // 'mensagemEmissor'     => $value[16],  //17
-                    // 'reasonCode'          => $value[17],  //18
-                    // 'posEntryMode'        => $value[18],  //19
-                    // 'emissor'             => $value[19],  //20
-                    // 'comercio'            => $value[20],  //21
-                    // 'status'              => $value[21],  //22
-                    // 'grupo'               => $value[22],  //23
-                    // 'descrição'           => $value[23],  //24
-                    // 'itk'                 => $value[24],  //25 
-                    // 'valordoChargeback'   => $value[25],  //26
-                    // 'pagoOuNao'           => $value[26],  //27
-                    // 'mes'                 => isset($value[27]) ? $value[27] : ''  //28  
+                 
+                // 'mes'                 => isset($value[27]) ? $value[27] : ''  //28  
 
                 );             
 
